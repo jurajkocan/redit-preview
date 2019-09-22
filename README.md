@@ -1,44 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Blendle frontend assignment - Reddits best
 
-## Available Scripts
+Hello fellow coder!
 
-In the project directory, you can run:
+At Blendle we make single page applications that are not only beautiful to look at but are also easy to use and well written.
 
-### `npm start`
+An application functions very differently from a website. It requires state to be kept in the browser while the user makes complex interactions.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Our designers have designed a little reddit like application. It shows a list of top stories and you can dive into the details.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+We don't want to take too much of you time, we think it’s doable to complete this challenge in 4 or 5 hours. Please try to stick to this timeframe and let us know if you'd like more time.
 
-### `npm test`
+## Technical requirements
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Single page application (SPA)
+- Written in React
+- Use proper build tools for build automation and testing
+- Add 3 working tests
+- Deployed on Netlify (If you haven't heard of it, it's a very nice and easy service to deploy sites, we use it for most of our applications as well)
 
-### `npm run build`
+## Functional requirements
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- List the 10 best posts on Reddit using their [public api info](https://www.reddit.com/dev/api/#GET_best) The api is public, no auth needed: [data](https://www.reddit.com/best.json)
+- Clicking on **the name of the subreddit** gives you details about the subreddit inside the application (see design)
+- Clicking on **the title of a post** opens it on reddit.com (e.g. like this: https://www.reddit.com/r/example/comments/a0x9ga/hello/)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Look closely at the design we've provided.
+- You can open the file using [Figma](https://www.figma.com/). Just create an account (this is free) and drag provided .fig file into your browser.
+- The font we used is called '[Inter](https://rsms.me/inter/)' (also free) (FYI: Inter used to be called 'Inter UI', but was later renamed to Inter.)
+- We've included the icon as well, so you don't have to export it
 
-### `npm run eject`
+## Can I / Do I / Should I … ?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Are tools like Create React App allowed?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  Sure, it's perfectly fine to bootstrap your project with something like Create React App or similar.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- What browsers do I need to support?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  Your solution should work in the latest version of Chrome. We'll also use Chrome to test mobile version using the Device Toolbar in the developer tools.
 
-## Learn More
+- How will we be testing the solution?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  We will open and test the application that you have deployed on Netlify. Next to that we will review the code itself: is the code clean, what does the architecture look like, are the test cases clear etc.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Should I use animations?
+
+  The application should feel smooth and polished. In some cases that may require a minor fade in/fade out animation. Try to see what animations you think are nice, without overdoing it.
+
+- How do I deliver the assignment?
+
+  - Email us the link of where the application is deployed on [Netlify](https://www.netlify.com)
+  - Email us a zip file with the source code
