@@ -8,6 +8,9 @@ import { RedditCard } from "../components/card/RedditCard";
 const listStyle = {
   loader: style({
     margin: "auto"
+  }),
+  redditCard: style({
+    marginBottom: 25
   })
 };
 
@@ -51,10 +54,12 @@ export class List extends React.Component<{}, State> {
               this.state.postsData.map((post, index) => {
                 return (
                   <RedditCard
+                    className={listStyle.redditCard}
                     key={`postCard-${index}`}
                     title={post.title}
                     subredditUrl={post.url}
-                    subscribersCount={post.subreddit_subscribers}
+                    points={post.ups}
+                    subreditName={post.subreddit_name_prefixed}
                   />
                 );
               })}

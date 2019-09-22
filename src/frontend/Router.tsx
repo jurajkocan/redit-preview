@@ -11,7 +11,7 @@ export const RouterApp = (
       <Switch>
         <Route exact path={RoutesEnum.HomePage} component={List} />
         <Route exact path={RoutesEnum.List} component={List} />
-        <Route exact path={RoutesEnum.Detail} component={Detail} />
+        <Route exact path={RoutesEnum.DetailWithParam} component={Detail} />
       </Switch>
     </MasterPage>
   </BrowserRouter>
