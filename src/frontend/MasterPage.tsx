@@ -1,6 +1,7 @@
 import React from "react";
 import { style, media, cssRaw } from "typestyle";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
+import { mobileBreakePoint } from "src/styles/CommonStyle";
 
 cssRaw(`
 @import url('https://rsms.me/inter/inter.css');
@@ -11,7 +12,7 @@ html { font-family: 'Inter', sans-serif; }
 `);
 
 const masterPageStyle = {
-  contentWrapper: style(media({ maxWidth: 500 }, { color: "red" }), {
+  contentWrapper: style(media({ maxWidth: mobileBreakePoint }, { width: "100%" }), {
     width: 688,
     margin: "auto",
     marginTop: 50,
@@ -19,11 +20,17 @@ const masterPageStyle = {
   })
 };
 
-export const MasterPage: React.FC = props => {
+const MasterPageComponent: React.FC<RouteComponentProps<any>> = props => {
+  const subReditTitle = props.match.params.subredit;
+  console.log(props.match.params);
+
   return (
     <div className={masterPageStyle.contentWrapper}>
+      <h1>{subReditTitle}</h1>
       <Link to="/Detail/12"> To detaiul</Link>
       {props.children}
     </div>
   );
 };
+
+export const MasterPage = withRouter(MasterPageComponent);

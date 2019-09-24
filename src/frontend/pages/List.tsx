@@ -1,17 +1,26 @@
 import React from "react";
 import { getBestPosts } from "src/api/SubredditPost";
 import { Loader } from "../components/common/Loader";
-import { style } from "typestyle";
+import { style, media } from "typestyle";
 import { RedditListPost } from "src/types/RedditData";
 import { RedditCard } from "../components/card/RedditCard";
+import { mobileBreakePoint } from "src/styles/CommonStyle";
 
 const listStyle = {
   loader: style({
     margin: "auto"
   }),
-  redditCard: style({
-    marginBottom: 25
-  })
+  redditCard: style(
+    media(
+      { maxWidth: mobileBreakePoint },
+      {
+        marginBottom: 0
+      }
+    ),
+    {
+      marginBottom: 25
+    }
+  )
 };
 
 type State = {
@@ -20,7 +29,7 @@ type State = {
   err: any;
 };
 
-export class List extends React.Component<{}, State> {
+export default class List extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
     this.state = {

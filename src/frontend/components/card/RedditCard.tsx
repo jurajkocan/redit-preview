@@ -1,39 +1,73 @@
 import React from "react";
-import { style } from "typestyle";
+import { style, media } from "typestyle";
 import { Link } from "react-router-dom";
 import { RoutesEnum } from "src/constants/Roots";
 // @ts-ignore
 import NumberFormat from "react-number-format";
-import { textColorGray } from "src/styles/CommonStyle";
+import { textColorGray, mobileBreakePoint } from "src/styles/CommonStyle";
 
 const redditCardStyle = {
-  wrapper: style({
-    border: "1px solid #E2E7EB",
-    padding: "25px 20px",
-    borderRadius: 4
-  }),
-  title: style({
-    cursor: "pointer",
-    fontSize: 24,
-    color: "#263D52",
-    fontWeight: "bold",
-    lineHeight: 1.3,
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    marginBottom: 12,
-    $nest: {
-      "&:hover": {
-        textDecoration: "underline"
+  wrapper: style(
+    media(
+      { maxWidth: mobileBreakePoint },
+      {
+        borderRadius: 0,
+        padding: "20px 15px"
+      }
+    ),
+    {
+      border: "1px solid #E2E7EB",
+      padding: "25px 20px",
+      borderRadius: 4,
+      backgroundColor: "white"
+    }
+  ),
+  title: style(
+    media(
+      { maxWidth: mobileBreakePoint },
+      {
+        fontSize: 20
+      }
+    ),
+    {
+      cursor: "pointer",
+      fontSize: 24,
+      color: "#263D52",
+      fontWeight: "bold",
+      lineHeight: 1.3,
+      "-webkit-line-clamp": 2,
+      WebkitBoxOrient: "vertical",
+      whiteSpace: "normal",
+      display: "-webkit-box",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+
+      marginBottom: 12,
+      $nest: {
+        "&:hover": {
+          textDecoration: "underline"
+        }
       }
     }
-  }),
+  ),
   cardContentRow: style({
     display: "flex"
   }),
-  subreditLink: style({
-    fontSize: 18
-  }),
+  subreditLink: style(
+    media(
+      { maxWidth: mobileBreakePoint },
+      {
+        fontSize: 16
+      }
+    ),
+    {
+      fontSize: 18,
+      maxWidth: "40%",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+      overflow: "hidden"
+    }
+  ),
   dot: style({
     height: 5,
     width: 5,
