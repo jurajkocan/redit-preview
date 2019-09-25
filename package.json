@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js --progress --color --watch",
-    "build": "webpack-dev-server --config config/webpack.prod.js --progress --color",
+    "build": "webpack --config config/webpack.prod.js --progress --color",
     "test": "jest"
   },
   "devDependencies": {
