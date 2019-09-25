@@ -28,7 +28,7 @@ type State = {
   postsData: null | RedditListPost[];
   err: any;
 };
-
+const listCount = 10;
 export default class List extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
@@ -37,7 +37,7 @@ export default class List extends React.Component<{}, State> {
       postsData: null,
       err: null
     };
-    getBestPosts(10)
+    getBestPosts(listCount)
       .then(response =>
         this.setState({
           postsData: response.data.data.children.map(post => post.data),

@@ -18,14 +18,10 @@ const config = {
   },
   module: {
     rules: [
-      // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
       {
-        test: /\.tsx?$/,
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
-        use: "ts-loader?configFile=tsconfig.json"
-        // options: {
-        //   configFile: "tsconfig.json"
-        // }
+        loader: "ts-loader"
       }
     ]
   }

@@ -112,7 +112,7 @@ export const RedditCard = (props: Props) => {
       <div className={redditCardStyle.cardContentRow}>
         <Link
           className={redditCardStyle.subreditLink}
-          to={`${RoutesEnum.Detail}/${props.subreditName}`}
+          to={`${RoutesEnum.Detail}?subreddit=${props.subreditName}`}
         >
           {props.subreditName}
         </Link>

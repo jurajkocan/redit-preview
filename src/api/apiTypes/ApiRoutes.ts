@@ -1,4 +1,4 @@
-import { RedditListPost } from "src/types/RedditData";
+import { RedditListPost, SubRedditDetail } from "src/types/RedditData";
 
 export namespace ApiRedditPost {
   export type BestGet = {
@@ -12,4 +12,14 @@ export namespace ApiRedditPost {
     };
   };
 }
-export type AppGetType = ApiRedditPost.BestGet;
+
+export namespace ApiRedditDetail {
+  export type DetailGet = {
+    url: "";
+    responseData: {
+      data: SubRedditDetail;
+    };
+  };
+}
+
+export type AppGetType = ApiRedditPost.BestGet | ApiRedditDetail.DetailGet;

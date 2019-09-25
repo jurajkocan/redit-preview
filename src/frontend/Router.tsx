@@ -10,11 +10,7 @@ export const RouterApp = (
         <Switch>
           <Route exact path={RoutesEnum.HomePage} component={lazy(() => import("./pages/List"))} />
           <Route exact path={RoutesEnum.List} component={lazy(() => import("./pages/List"))} />
-          <Route
-            exact
-            path={RoutesEnum.DetailWithParam}
-            component={lazy(() => import("./pages/Detail"))}
-          />
+          <Route path={RoutesEnum.Detail} component={lazy(() => import("./pages/Detail"))} />
         </Switch>
       </Suspense>
     </MasterPage>

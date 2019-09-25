@@ -1,6 +1,6 @@
 import React from "react";
 import { style, media, cssRaw } from "typestyle";
-import { Link, withRouter, RouteComponentProps } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import { mobileBreakePoint } from "src/styles/CommonStyle";
 
 cssRaw(`
@@ -21,16 +21,7 @@ const masterPageStyle = {
 };
 
 const MasterPageComponent: React.FC<RouteComponentProps<any>> = props => {
-  const subReditTitle = props.match.params.subredit;
-  console.log(props.match.params);
-
-  return (
-    <div className={masterPageStyle.contentWrapper}>
-      <h1>{subReditTitle}</h1>
-      <Link to="/Detail/12"> To detaiul</Link>
-      {props.children}
-    </div>
-  );
+  return <div className={masterPageStyle.contentWrapper}>{props.children}</div>;
 };
 
 export const MasterPage = withRouter(MasterPageComponent);
