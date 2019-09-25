@@ -1,20 +1,25 @@
 const path = require("path");
-
-const config = {
-  context: __dirname,
-  mode: "development",
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  mode: "production",
   entry: {
-    app: "./lib/frontend/App.tsx"
+    app: "./src/frontend/Index.tsx",
+    List: "./src/frontend/pages/List.tsx",
+    Detail: "./src/frontend/pages/Detail.tsx"
   },
   target: "web",
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "[name].js",
     publicPath: "/"
   },
   resolve: {
     // Add '.ts' and '.tsx' as a resolvable extension.
-    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    modules: ["node_modules", "src"],
+    alias: {
+      src: path.resolve(__dirname, "../src/")
+    }
   },
   module: {
     rules: [
@@ -24,7 +29,16 @@ const config = {
         loader: "ts-loader"
       }
     ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/frontend/index.html"
+    })
+  ],
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 3000
   }
 };
-
-module.exports = config;
