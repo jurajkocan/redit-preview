@@ -34,11 +34,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/frontend/index.html"
     })
-  ],
-  devServer: {
-    historyApiFallback: true,
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 3000
-  }
+  ]
 };
