@@ -2,6 +2,7 @@ import React from "react";
 import { style, media, cssRaw } from "typestyle";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { mobileBreakePoint } from "src/styles/CommonStyle";
+import { RoutesEnum } from "src/constants/Roots";
 
 cssRaw(`
 @import url('https://rsms.me/inter/inter.css');
@@ -21,7 +22,18 @@ const masterPageStyle = {
 };
 
 const MasterPageComponent: React.FC<RouteComponentProps<any>> = props => {
-  return <div className={masterPageStyle.contentWrapper}>{props.children}</div>;
+  console.log(props);
+  return (
+    <div>
+      <div className={masterPageStyle.contentWrapper}>
+        {props.location.pathname !== RoutesEnum.HomePage &&
+        props.location.pathname !== RoutesEnum.List ? (
+          <div>Back</div>
+        ) : null}
+        {props.children}
+      </div>
+    </div>
+  );
 };
 
 export const MasterPage = withRouter(MasterPageComponent);
