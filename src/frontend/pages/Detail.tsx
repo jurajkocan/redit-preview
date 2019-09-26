@@ -6,15 +6,25 @@ import { parseQueryString } from "src/utils/RouteUtils";
 import { Loader } from "../components/common/Loader";
 import { style } from "typestyle";
 import { Link } from "react-router-dom";
+// @ts-ignore
+import NumberFormat from "react-number-format";
 
 const detailStyle = {
   loader: style({
     margin: "auto"
   }),
 
-  keyValueWrapper: style({}),
-  key: style({}),
-  value: style({})
+  keyValueWrapper: style({
+    marginBottom: 45,
+    $nest: {
+      "&:last-child": {
+        marginBottom: 0
+      }
+    }
+  }),
+  key: style({
+    marginBottom: 10
+  })
 };
 
 type Props = RouteComponentProps<{ subreddit?: string }>;
@@ -68,18 +78,23 @@ class Detail extends React.Component<Props, State> {
         ) : (
           <div>
             <div className={detailStyle.keyValueWrapper}>
-              <div className={detailStyle.key}>Title</div>
-              <div className={detailStyle.value}>{this.state.subredditDetailData.title}</div>
+              <h2 className={detailStyle.key}>Title</h2>
+              <div>{this.state.subredditDetailData.title}</div>
             </div>
             <div className={detailStyle.keyValueWrapper}>
-              <div className={detailStyle.key}>Public description</div>
-              <div className={detailStyle.value}>
-                {this.state.subredditDetailData.public_description}
+              <h2 className={detailStyle.key}>Public description</h2>
+              <div>{this.state.subredditDetailData.public_description}</div>
+            </div>
+            <div className={detailStyle.keyValueWrapper}>
+              <h2 className={detailStyle.key}>Subscriber count</h2>
+              <div>
+                <NumberFormat
+                  value={this.state.subredditDetailData.subscribers}
+                  displayType={"text"}
+                  decimalSeparator={false}
+                  thousandSeparator="."
+                />
               </div>
-            </div>
-            <div className={detailStyle.keyValueWrapper}>
-              <div className={detailStyle.key}>Subscriber count</div>
-              <div className={detailStyle.value}>{this.state.subredditDetailData.subscribers}</div>
             </div>
           </div>
         )}

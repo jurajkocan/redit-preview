@@ -5,7 +5,8 @@ module.exports = {
   entry: {
     app: "./src/frontend/Index.tsx",
     List: "./src/frontend/pages/List.tsx",
-    Detail: "./src/frontend/pages/Detail.tsx"
+    Detail: "./src/frontend/pages/Detail.tsx",
+    NotFound404: "./src/frontend/pages/404.tsx"
   },
   devtool: "source-map",
   target: "web",

@@ -5,14 +5,21 @@ import { RoutesEnum } from "src/constants/Roots";
 
 export const RouterApp = (
   <BrowserRouter>
-    <MasterPage>
-      <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <MasterPage>
+          <div>Loading...</div>
+        </MasterPage>
+      }
+    >
+      <MasterPage>
         <Switch>
           <Route exact path={RoutesEnum.HomePage} component={lazy(() => import("./pages/List"))} />
           <Route exact path={RoutesEnum.List} component={lazy(() => import("./pages/List"))} />
-          <Route path={RoutesEnum.Detail} component={lazy(() => import("./pages/Detail"))} />
+          <Route exact path={RoutesEnum.Detail} component={lazy(() => import("./pages/Detail"))} />
+          <Route component={lazy(() => import("./pages/404"))} />
         </Switch>
-      </Suspense>
-    </MasterPage>
+      </MasterPage>
+    </Suspense>
   </BrowserRouter>
 );

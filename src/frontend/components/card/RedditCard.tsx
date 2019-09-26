@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { RoutesEnum } from "src/constants/Roots";
 // @ts-ignore
 import NumberFormat from "react-number-format";
-import { textColorGray, mobileBreakePoint } from "src/styles/CommonStyle";
+import { textColorGray, mobileBreakePoint, textColorBlue700 } from "src/styles/CommonStyle";
 
 const redditCardStyle = {
   wrapper: style(
@@ -32,7 +32,7 @@ const redditCardStyle = {
     {
       cursor: "pointer",
       fontSize: 24,
-      color: "#263D52",
+      color: textColorBlue700,
       fontWeight: "bold",
       lineHeight: 1.3,
       "-webkit-line-clamp": 2,

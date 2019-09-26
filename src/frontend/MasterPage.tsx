@@ -22,7 +22,6 @@ const masterPageStyle = {
 };
 
 const MasterPageComponent: React.FC<RouteComponentProps<any>> = props => {
-  console.log(props);
   return (
     <div>
       <div className={masterPageStyle.contentWrapper}>
